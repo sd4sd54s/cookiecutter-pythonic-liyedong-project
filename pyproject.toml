@@ -28,3 +28,13 @@ python_files = "tests.py test_*.py *_tests.py"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# 配置项目下载源
+[[tool.poetry.source]]
+name = "tsinghua"
+priority = "primary"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "supplemental"
