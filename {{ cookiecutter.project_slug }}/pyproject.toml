@@ -11,6 +11,9 @@ classifiers = [
     "Programming Language :: Python :: {{ cookiecutter.python_version }}",
 ]
 
+packages = [{ include = "src/{{ cookiecutter.project_slug }}" }]
+
+
 [tool.poetry.dependencies]
 python = "^{{ cookiecutter.python_version }}"
 {%- if cookiecutter.init_skeleton|lower == 'y' %}
@@ -49,3 +52,14 @@ python_files = "tests.py test_*.py *_tests.py"
 
 [tool.pylint.design]
 max-line-length = 120
+
+# 配置项目下载源
+[[tool.poetry.source]]
+name = "tsinghua"
+priority = "primary"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "supplemental"
+
